@@ -22,3 +22,9 @@ Route::get('/home', 'HomeController@index');
 Route::resource('/question', 'QuestionController');
 Route::get('/play', 'PlayController@show');
 Route::post('/play', 'PlayController@submit');
+
+
+Route::get('/forum/{question?}', 'ForumController@showById');
+Route::post('/forum/{question}', 'ForumController@postById');
+// Route::get('/forum', 'ForumController@show');
+// Route::post('/forum', 'ForumController@post');

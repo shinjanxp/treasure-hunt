@@ -28,10 +28,10 @@ class User extends Authenticatable
     ];
     
     public function submissions(){
-        $this->hasMany(Submission::class);
+        return $this->hasMany(Submission::class);
     }
     public function posts(){
-        $this->hasMany(Post::class);
+        return $this->hasMany(Post::class);
     }
     
     public function is_admin(){

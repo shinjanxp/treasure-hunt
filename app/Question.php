@@ -13,10 +13,10 @@ class Question extends Model
         'solution','explanation'  
     ];
     public function submissions(){
-        $this->hasMany(Submission::class);
+        return $this->hasMany(Submission::class);
     }
     public function posts(){
-        $this->hasMany(Post::class);
+        return $this->hasMany(Post::class);
     }
     
     public function evaluate(Submission $submission){

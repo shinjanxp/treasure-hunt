@@ -12,7 +12,9 @@
 
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/treasure.css') }}" rel="stylesheet">
+
 
     <!-- Scripts -->
     <script>
@@ -24,7 +26,7 @@
     @yield('head-section')
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="full-height">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -56,7 +58,10 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            <li><a href="/forum">Forum</a></li>
+                            <li><a href="/play">Play</a></li>
                             <li class="dropdown">
+                                
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>

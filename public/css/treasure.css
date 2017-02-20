@@ -1,0 +1,126 @@
+
+@import url("http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic");
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+.foot {
+    margin-bottom:0px;margin-left:0px;margin-right:0px;clear:both
+}
+.footerpadding {
+    padding-top: 8px;
+    padding-bottom:7px;
+}
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+
+.navbar-default
+{
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  color: #fff;
+	text-transform:uppercase;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.navbar-default .navbar-brand,.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text,.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover,.dropdown-menu>li>a,.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+  color:#fff;
+}
+
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+    background-color: rgba(255,255,255,0.3);
+	-webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+#question {
+    color:white;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#postreply {
+    width:80%;
+}
+#buttonrow {
+    margin-bottom: 0.5em;
+}
+
+.shadow {
+text-shadow: 2px 2px 2px #000;
+color:white;
+}
+
+.small_shadow {
+    text-shadow: 1px 1px 1px #000;
+}
+#app{
+  background-color:rgba(0,0,0,0.6);
+}
+html, body {
+    background-color: #fff;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+    background-image: url('/images/bg.jpg');
+    background-attachment : fixed;
+
+}
+
+.full-height {
+    min-height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #fff;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+.well,.panel, .panel-default>.panel-heading{
+  color:#fff;
+  background-color:rgba(255,255,255,0.3);
+  border: none;
+  padding:10px;
+}
+textarea.form-control{
+  background-color:#333;
+  border: none;
+  padding:10px;
+  margin:10px;
+}

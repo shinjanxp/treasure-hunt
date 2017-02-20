@@ -1,2 +1,6 @@
 [19-Feb-2017 15:49:17 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ubuntu/workspace/storage/framework/views/b282d1166cee8b7c0dc8dfa65b6c5f93afe6edea.php on line 26
 [20-Feb-2017 05:54:13 UTC] PHP Fatal error:  Undefined constant 'App\Question' in /home/ubuntu/workspace/storage/framework/views/82ce4810cc43d475da65137a82f6b956bd019073.php on line 74
+[20-Feb-2017 07:50:30 UTC] PHP Fatal error:  Call to a member function addEagerConstraints() on null in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php on line 533
+[20-Feb-2017 07:51:56 UTC] PHP Fatal error:  Call to a member function addEagerConstraints() on null in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php on line 533
+[20-Feb-2017 07:53:47 UTC] PHP Parse error:  syntax error, unexpected ':', expecting '(' in /home/ubuntu/workspace/storage/framework/views/519bbc7b03cc628ce9c7d25d95e29b5779739d28.php on line 51
+[20-Feb-2017 08:02:21 UTC] PHP Fatal error:  Class 'App\Http\Controllers\App\Post' not found in /home/ubuntu/workspace/app/Http/Controllers/ForumController.php on line 22
