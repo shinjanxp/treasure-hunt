@@ -38,6 +38,34 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('institute') ? ' has-error' : '' }}">
+                            <label for="institute" class="col-md-4 control-label">Institute</label>
+
+                            <div class="col-md-6">
+                                <input id="institute" type="text" class="form-control" name="institute" value="{{ old('institute') }}" required autofocus>
+
+                                @if ($errors->has('institute'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('institute') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
+                            <label for="dob" class="col-md-4 control-label">Date of Birth</label>
+
+                            <div class="col-md-6">
+                                <input id="dob" type="date" class="form-control" name="dob" value="{{ old('dob') }}" required autofocus>
+
+                                @if ($errors->has('dob'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('dob') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 

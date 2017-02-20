@@ -17,8 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->text('question_html');
             $table->string('solution');
-            $table->text('explanation_html');
-            $table->integer('serial_number')->unsigned()->nullable();
+            $table->text('explanation');
             $table->timestamps();
         });
     }

@@ -11,7 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <!-- Scripts -->
     <script>
@@ -19,6 +20,8 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    @yield('head-section')
 </head>
 <body>
     <div id="app">
@@ -82,6 +85,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @yield('bottom-section')
 </body>
 </html>

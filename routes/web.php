@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('/question', 'QuestionController');
+Route::get('/play', 'PlayController@show');
+Route::post('/play', 'PlayController@submit');
