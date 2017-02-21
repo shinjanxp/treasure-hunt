@@ -4,3 +4,58 @@
 [20-Feb-2017 07:51:56 UTC] PHP Fatal error:  Call to a member function addEagerConstraints() on null in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php on line 533
 [20-Feb-2017 07:53:47 UTC] PHP Parse error:  syntax error, unexpected ':', expecting '(' in /home/ubuntu/workspace/storage/framework/views/519bbc7b03cc628ce9c7d25d95e29b5779739d28.php on line 51
 [20-Feb-2017 08:02:21 UTC] PHP Fatal error:  Class 'App\Http\Controllers\App\Post' not found in /home/ubuntu/workspace/app/Http/Controllers/ForumController.php on line 22
+[20-Feb-2017 10:32:47 UTC] PHP Parse error:  syntax error, unexpected '$questions' (T_VARIABLE), expecting '(' in /home/ubuntu/workspace/routes/web.php on line 33
+[20-Feb-2017 10:52:16 UTC] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Class config does not exist' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php:681
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(681): ReflectionClass->__construct('config')
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(565): Illuminate\Container\Container->build('config')
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(702): Illuminate\Container\Container->make('config')
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(105): Illuminate\Foundation\Application->make('config')
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(263): app('config')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(211): config('app.debug')
+#6 /home/ubuntu/workspace/ve in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 681
+[20-Feb-2017 10:52:21 UTC] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Class config does not exist' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php:681
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(681): ReflectionClass->__construct('config')
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(565): Illuminate\Container\Container->build('config')
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(702): Illuminate\Container\Container->make('config')
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(105): Illuminate\Foundation\Application->make('config')
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(263): app('config')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(211): config('app.debug')
+#6 /home/ubuntu/workspace/ve in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 681
+[20-Feb-2017 10:52:37 UTC] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Class config does not exist' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php:681
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(681): ReflectionClass->__construct('config')
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(565): Illuminate\Container\Container->build('config')
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(702): Illuminate\Container\Container->make('config')
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(105): Illuminate\Foundation\Application->make('config')
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(263): app('config')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(211): config('app.debug')
+#6 /home/ubuntu/workspace/ve in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 681
+[20-Feb-2017 10:52:52 UTC] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Class config does not exist' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php:681
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(681): ReflectionClass->__construct('config')
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(565): Illuminate\Container\Container->build('config')
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(702): Illuminate\Container\Container->make('config')
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(105): Illuminate\Foundation\Application->make('config')
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(263): app('config')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(211): config('app.debug')
+#6 /home/ubuntu/workspace/ve in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 681
+[20-Feb-2017 10:52:59 UTC] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Class config does not exist' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php:681
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(681): ReflectionClass->__construct('config')
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(565): Illuminate\Container\Container->build('config')
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(702): Illuminate\Container\Container->make('config')
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(105): Illuminate\Foundation\Application->make('config')
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(263): app('config')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(211): config('app.debug')
+#6 /home/ubuntu/workspace/ve in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 681
+[20-Feb-2017 11:49:03 UTC] PHP Parse error:  syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM) in /home/ubuntu/workspace/storage/framework/views/82ce4810cc43d475da65137a82f6b956bd019073.php on line 87
+[20-Feb-2017 11:49:13 UTC] PHP Parse error:  syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM) in /home/ubuntu/workspace/storage/framework/views/82ce4810cc43d475da65137a82f6b956bd019073.php on line 87
+[20-Feb-2017 11:49:13 UTC] PHP Parse error:  syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM) in /home/ubuntu/workspace/storage/framework/views/82ce4810cc43d475da65137a82f6b956bd019073.php on line 87
+[20-Feb-2017 11:49:15 UTC] PHP Parse error:  syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM) in /home/ubuntu/workspace/storage/framework/views/82ce4810cc43d475da65137a82f6b956bd019073.php on line 87
+[20-Feb-2017 11:49:17 UTC] PHP Parse error:  syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM) in /home/ubuntu/workspace/storage/framework/views/82ce4810cc43d475da65137a82f6b956bd019073.php on line 87
+[21-Feb-2017 14:50:23 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/ubuntu/workspace/routes/web.php on line 38
+[21-Feb-2017 14:50:33 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/ubuntu/workspace/storage/framework/views/0238136b6f0fe08795fd3af5685b953320de3fbb.php on line 36
+[21-Feb-2017 14:59:25 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Gate' not found in /home/ubuntu/workspace/app/Http/Controllers/PlayController.php on line 14
+[21-Feb-2017 15:04:47 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/storage/framework/views/65b143ad02f6fc38562c2f3fad888578b4a6b858.php on line 112

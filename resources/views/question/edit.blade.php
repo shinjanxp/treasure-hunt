@@ -46,7 +46,7 @@ textarea, iframe{
         <div class="row">
             <div class="col-md-6">
                 <h4>Edit HTML</h4>
-                <textarea name="question_html" id="editbox" cols="90" rows="20">{{ old('question_html',  isset($question->question_html) ? $question->question_html : null) }}</textarea>
+                <textarea name="question_html" class="form-control" id="editbox" cols="90" rows="20">{{ old('question_html',  isset($question->question_html) ? $question->question_html : null) }}</textarea>
             </div>
             <div class="col-md-6">
                 <h4>Output</h4>
@@ -56,16 +56,16 @@ textarea, iframe{
         <div class="row">
             <div class="col-md-4">
                 <h4>Explanation</h4>
-                <textarea name="explanation" id="" cols="50" rows="10" required>{{ old('explanation',  isset($question->explanation) ? $question->explanation : null) }}</textarea>
+                <textarea name="explanation" class="form-control" id="" cols="50" rows="10" required>{{ old('explanation',  isset($question->explanation) ? $question->explanation : null) }}</textarea>
             </div>
             
             <div class="col-md-4">
                 <h4>Solution</h4>
-                <input type="text"  name="solution" value="{{ old('solution',  isset($question->solution) ? $question->solution : null) }}" required/>
+                <input type="text"  name="solution" class="form-control" value="{{ old('solution',  isset($question->solution) ? $question->solution : null) }}" required/>
             </div>
             <div class="col-md-4">
                 <h4>Serial number</h4>
-                <input type="number" clsss="form-control" name="id" value="{{ old('id',  isset($question->id) ? $question->id : null) }}" required/>
+                <input type="number" class="form-control" name="id" value="{{ old('id',  isset($question->id) ? $question->id : null) }}" required/>
                 <button type="submit" class="btn btn-primary pull-right">Save</button>
             </div>
         </div>
@@ -85,13 +85,23 @@ var defaultStuff = '<h3>Welcome to the real-time HTML editor!<\/h3>\n' +
 var old = '';
 if($('#editbox').val()=="")
     $('#editbox').val(defaultStuff)
-
+// insert css
+var dynamicframe = $("#dynamicframe").contents().find('head');
+var css=    '<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">\
+<link href="/css/app.css" rel="stylesheet">\
+<link href="/css/treasure.css" rel="stylesheet">\
+<style>body{background:none;}</style>'
+dynamicframe.html(css);
 function updateIframe(){
+    
+
+        
 	var dynamicframe = $("#dynamicframe").contents().find('body');
     var textareaValue = $("#editbox").val();
-
     dynamicframe.html(textareaValue);
+    
+
 }
-window.setInterval(updateIframe,150)
+window.setInterval(updateIframe,500)
 </script>
 @endsection

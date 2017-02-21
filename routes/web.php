@@ -28,3 +28,12 @@ Route::get('/forum/{question?}', 'ForumController@showById');
 Route::post('/forum/{question}', 'ForumController@postById');
 // Route::get('/forum', 'ForumController@show');
 // Route::post('/forum', 'ForumController@post');
+Route::get('/leaderboard',function(){
+    $questions = \App\Question::all();
+    $users= App\User::with('submissions')->where('is_admin','=',false)->get()->sortBy(function($user) use ($questions){
+        return ($questions->last()->id-$user->level)*10000 + $user->submissions->count();
+        
+    });
+    $last_level = $questions->last()->id;
+    return view('leaderboard')->with(compact('users','last_level'));
+});

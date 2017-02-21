@@ -23,7 +23,7 @@
 	text-transform:uppercase;
 	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-.navbar-default .navbar-brand,.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text,.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover,.dropdown-menu>li>a,.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+.navbar-default .navbar-brand,.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text,.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover,.dropdown-menu>li>a,.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover,a.list-group-item, button.list-group-item{
   color:#fff;
 }
 
@@ -112,14 +112,15 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
-.well,.panel, .panel-default>.panel-heading{
+.well,.panel, .panel-default>.panel-heading, .list-group-item{
   color:#fff;
   background-color:rgba(255,255,255,0.3);
   border: none;
   padding:10px;
 }
-textarea.form-control{
+.form-control{
   background-color:#333;
+  color:#fff;
   border: none;
   padding:10px;
   margin:10px;

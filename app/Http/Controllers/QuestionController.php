@@ -43,7 +43,7 @@ class QuestionController extends Controller
         $this->authorize('create', Question::class);
         $this->validate($request, [
             'question_html' => 'required',
-            'solution' =>'required',
+            'solution' =>'required|regex:[a-z]',
             'explanation' => 'required',
             'id' => 'required|integer|unique:questions',
         ]);
@@ -75,12 +75,12 @@ class QuestionController extends Controller
         $this->authorize('update', $question);
         $this->validate($request, [
             'question_html' => 'required',
-            'solution' =>'required',
+            'solution' =>'required|regex:/^[(a-z)]+$/u',
             'explanation' => 'required',
             'id' => 'required|integer|unique:questions,id,'.$question->id,
         ]);
         $question->update($request->all());
-        return view('question.edit')->with(compact('question'));
+        return redirect('/question/'.$question->id.'/edit');
     }
 
     /**

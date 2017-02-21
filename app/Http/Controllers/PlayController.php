@@ -11,13 +11,25 @@ class PlayController extends Controller
         $this->middleware('auth');
     }
     public function show(){
+        if (\Gate::denies('play')) {
+            abort(401,"Cant play yet");
+        }
         $level = \Auth::user()->level;
         $question = Question::find($level);
-        $submissions = Submission::where('user_id','=',\Auth::user()->id)->where('question_id','=',$question->id)->get();
-        return view('play')->with(compact('question','submissions'));
+        if($question){
+            $submissions = Submission::where('user_id','=',\Auth::user()->id)->where('question_id','=',$question->id)->get();
+            return view('play')->with(compact('question','submissions'));
+        }
+        else
+            return view('play')->with(compact('question'));
+    
+
     }
     
     public function submit(Request $request){
+        if (\Gate::denies('play')) {
+            abort(401,"Cant play yet");
+        }
         $user = \Auth::user();
         $level = $user->level;
         $question = Question::find($level);
@@ -37,5 +49,6 @@ class PlayController extends Controller
         else 
             flash('Oops! Wrong answer. Try again', 'danger');
         return redirect('/play');
+        
     }
 }

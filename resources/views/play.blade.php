@@ -4,13 +4,13 @@
 
 <div class="container">
     @include('flash::message')
+    @if($question)
     <div class="row">
-        <div class="pull-left"><h2>Question {{$question->id}}</h2></div>
-        <div class="pull-right"><a href="/forum" class="btn btn-primary">Forum</a></div>
+        <div class="pull-left"><h2>Level {{$question->id}}</h2></div>
     </div>
+    
+    
     <div class="row">
-        
-        
         <center>{!! $question->question_html !!}</center>
         
         <center class>
@@ -35,6 +35,15 @@
             </div>
         </center>
     </div>
+    @else
+    <div class="row">
+        <center>
+            <h1>YOU'RE THERE!</h1>
+            <img src="{{ asset('/images/youreawesome.jpg') }}"></img>
+        </center>
+        
+    </div>
+    @endif
 </div>
 @endsection
 

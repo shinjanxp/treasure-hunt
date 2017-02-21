@@ -31,8 +31,11 @@ class ForumController extends Controller
     
     
     public function showById(Question $question){
+        
         if(!$question->id)
             $question = \App\Question::find(\Auth::user()->level);
+        if(!$question)
+            return redirect('/play');
         $this->authorize('showById',[Post::class,$question]);
         $posts = $question->posts;
         $questions = \App\Question::with('posts')->get();

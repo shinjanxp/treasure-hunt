@@ -25,7 +25,18 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
+        Gate::define('play', function ($user) {
+            if($user->is_admin())
+                return true;
+            $start = \Carbon\Carbon::parse(env('GAME_START_TIME'));
+            $end = \Carbon\Carbon::parse(env('GAME_END_TIME'));
+            $now = \Carbon\Carbon::now();
+            $last_level = \App\Question::all()->last()->id;
+            if( ($now->gt($start) && $now->lt($end)) || $user->level>$last_level )
+                return true;
+            else
+                return false;
+        });
         //
     }
 }

@@ -9,6 +9,8 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    <h2>Level: {{Auth::user()->level}}</h2>
+                    <h2>Attempts: {{Auth::user()->submissions->count()}}</h2>
                 </div>
             </div>
         </div>
