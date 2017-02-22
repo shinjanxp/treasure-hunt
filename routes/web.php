@@ -10,6 +10,70 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/artisan/migrate/refresh/{key?}',  array('as' => 'refresh', function($key = null)
+{
+    if($key == env('APP_SECRET')){
+    try {
+      
+      echo '<br>refresh with app tables migrations...';
+      \Artisan::call('migrate:refresh');
+      echo '<br>done with app tables migrations';
+      
+    } catch (Exception $e) {
+      Response::make($e->getMessage(), 500);
+    }
+  }else{
+    App::abort(404);
+  }
+}));
+Route::get('/artisan/migrate/seed/{key?}',  array('as' => 'refresh', function($key = null)
+{
+    if($key == env('APP_SECRET',null)){
+    try {
+      
+      echo '<br>seed with app tables migrations...';
+      Artisan::call('db:seed');
+      echo '<br>done with app tables migrations';
+      
+    } catch (Exception $e) {
+      Response::make($e->getMessage(), 500);
+    }
+  }else{
+    App::abort(404);
+  }
+}));
+Route::get('/artisan/migrate/rollback/{key?}',  array('as' => 'refresh', function($key = null)
+{
+    if($key == env('APP_SECRET',null)){
+    try {
+      
+      echo '<br>rollback with app tables migrations...';
+      Artisan::call('migrate:rollback');
+      echo '<br>done with app tables migrations';
+      
+    } catch (Exception $e) {
+      Response::make($e->getMessage(), 500);
+    }
+  }else{
+    App::abort(404);
+  }
+}));
+Route::get('/artisan/migrate/{key?}',  array('as' => 'migrate', function($key = null)
+{
+    if($key == env('APP_SECRET',null)){
+    try {
+      
+      echo '<br>init with app tables migrations...';
+      Artisan::call('migrate',['--seed']);
+      echo '<br>done with app tables migrations';
+      
+    } catch (Exception $e) {
+      Response::make($e->getMessage(), 500);
+    }
+  }else{
+    App::abort(404);
+  }
+}));
 
 Route::get('/', function () {
     return view('welcome');

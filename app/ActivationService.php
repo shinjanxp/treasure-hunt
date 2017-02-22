@@ -3,21 +3,18 @@
 namespace App;
 
 
-use Illuminate\Mail\Mailer;
-use Illuminate\Mail\Message;
+use App\Notifications\VerifyEmail;
 
 class ActivationService
 {
 
-    protected $mailer;
 
     protected $activationRepo;
 
     protected $resendAfter = 24;
 
-    public function __construct(Mailer $mailer, ActivationRepository $activationRepo)
+    public function __construct( ActivationRepository $activationRepo)
     {
-        $this->mailer = $mailer;
         $this->activationRepo = $activationRepo;
     }
 
@@ -31,12 +28,12 @@ class ActivationService
         $token = $this->activationRepo->createActivation($user);
 
         $link = route('user.activate', $token);
-        $message = sprintf('Activate account <a href="%s">%s</a>', $link, $link);
+        // $message = sprintf('Activate account <a href="%s">%s</a>', $link, $link);
 
-        $this->mailer->raw($message, function (Message $m) use ($user) {
-            $m->to($user->email)->subject('Activation mail');
-        });
-
+        // $this->mailer->raw($message, function (Message $m) use ($user) {
+        //     $m->to($user->email)->subject('Activation mail');
+        // });
+        $user->notify(new VerifyEmail($link));
 
     }
 
