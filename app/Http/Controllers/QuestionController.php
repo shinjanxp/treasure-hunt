@@ -43,7 +43,7 @@ class QuestionController extends Controller
         $this->authorize('create', Question::class);
         $this->validate($request, [
             'question_html' => 'required',
-            'solution' =>'required|regex:[a-z]',
+            'solution' =>'required|regex:/^[(a-z)]+$/u',
             'explanation' => 'required',
             'id' => 'required|integer|unique:questions',
         ]);

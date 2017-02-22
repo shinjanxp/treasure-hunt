@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('user/activation/{token}', 'Auth\RegisterController@activateUser')->name('user.activate');
 
 Route::get('/home', 'HomeController@index');
 

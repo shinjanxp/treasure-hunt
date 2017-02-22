@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->date('dob');
             $table->integer('level')->unsigned()->default(1);
             $table->boolean('is_admin')->default(false);
+            $table->boolean('activated')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

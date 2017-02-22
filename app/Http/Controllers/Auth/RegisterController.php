@@ -6,6 +6,9 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use App\ActivationService;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -27,16 +30,18 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
+    protected $activationService;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ActivationService $activationService)
     {
         $this->middleware('guest');
+        $this->activationService = $activationService;
     }
 
     /**
@@ -71,5 +76,34 @@ class RegisterController extends Controller
             'institute' => $data['institute'],
             'dob' => \Carbon\Carbon::parse($data['dob']),
         ]);
+    }
+    
+    /**
+     * After registration send activation email, not login
+     *
+     * @param  array  $data
+     * @return User
+     */
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        // $this->guard()->login($user);
+
+        // return $this->registered($request, $user) ?: redirect($this->redirectPath());
+        $this->activationService->sendActivationMail($user);
+
+        return redirect($this->redirectPath())->with('status', 'We sent you an activation code. Check your email. Please check your spam folder too.');
+    }
+    public function activateUser($token)
+    {
+        if ($user = $this->activationService->activateUser($token)) {
+            auth()->login($user);
+            return redirect($this->redirectPath());
+        }
+        abort(404);
     }
 }
