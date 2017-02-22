@@ -21,11 +21,11 @@
 					@foreach($posts as $post)
 					<div class="well" style="margin-bottom:0.6em;" id="post">
     					<div class="row">
-    						<div class="col-md-2" align="center">
+    						<div class="col-md-2" align="center" >
     						    @if($post->user->is_admin())
-    							    <img class="img img-responsive img-circle" src="{{ asset('images/admin.png') }}">
+    							    <img class="img img-responsive img-circle forum-img" src="{{ asset('images/admin.png') }}">
     							@else
-    							    <img class="img img-responsive img-circle" src="{{ asset('images/player.jpg') }}">
+    							    <img class="img img-responsive img-circle forum-img" src="{{ asset('images/player.jpg') }}">
                                 @endif
     							<p><strong>{{$post->user->name}}</strong></p>
     						</div>

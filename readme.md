@@ -21,3 +21,4 @@ Online treasure hunt application built with Laravel
 * Provide explanation, solution and serial number of the question as it should be during the game.
 * Solution must be lowercase alphabets only! Participants' submission will be converted to lowercase alphabets, 
   stripped of any other symbols and then compared with the solution.
+* Write your own instructions in resources/home.blade.php

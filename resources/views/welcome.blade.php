@@ -64,7 +64,15 @@ $now = \Carbon\Carbon::now();
                     
                     @if (Auth::check())
                         <a href="{{ url('/home/') }}">Home</a>
-                        
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
@@ -91,6 +99,7 @@ $now = \Carbon\Carbon::now();
                     </div> <!-- /.Counter Div -->
                 @endif
             </div>
+
         </div>
     <script>
     // set the date we're counting down to
