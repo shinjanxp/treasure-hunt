@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $last_level = \App\Question::all()->last()->id;
+        return view('home')->with(compact('last_level'));
     }
 }

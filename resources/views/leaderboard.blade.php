@@ -21,7 +21,7 @@
                 <th>Name</th>
                 <th>Institute</th>
                 <th>Level</th>
-                <th>Attempts</th>
+                <th>Cleared at</th>
               </tr>
             </thead>
             <tbody>
@@ -34,7 +34,12 @@
                 @else
                 <td>Game Over</td>
                 @endif
-                <td>{{$user->submissions->count()}}</td>
+                
+                @if($user->level==1)
+                <td>Just started</td>
+                @else
+                <td>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $user->last_level_cleared_at)->setTimezone('Asia/Calcutta')}}</td>
+                @endif
               </tr>
             @endforeach
             </tbody>

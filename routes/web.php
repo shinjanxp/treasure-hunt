@@ -64,7 +64,7 @@ Route::get('/artisan/migrate/{key?}',  array('as' => 'migrate', function($key = 
     try {
       
       echo '<br>init with app tables migrations...';
-      \Artisan::call('migrate',['--seed']);
+      \Artisan::call('migrate');
       echo '<br>done with app tables migrations';
       
     } catch (Exception $e) {
@@ -87,7 +87,7 @@ Route::get('/home', 'HomeController@index');
 Route::resource('/question', 'QuestionController');
 Route::get('/play', 'PlayController@show');
 Route::post('/play', 'PlayController@submit');
-
+Route::post('/reset', 'PlayController@reset');
 
 Route::get('/forum/{question?}', 'ForumController@showById');
 Route::post('/forum/{question}', 'ForumController@postById');
@@ -95,10 +95,11 @@ Route::post('/forum/{question}', 'ForumController@postById');
 // Route::post('/forum', 'ForumController@post');
 Route::get('/leaderboard',function(){
     $questions = \App\Question::all();
-    $users= App\User::with('submissions')->where('is_admin','=',false)->get()->sortBy(function($user) use ($questions){
-        return ($questions->last()->id-$user->level)*10000 + $user->submissions->count();
+    $users= App\User::with('submissions')->where('is_admin','=',false)->orderBy('level','DESC')->orderBy('last_level_cleared_at','ASC')->get();
+    // $users= App\User::with('submissions')->where('is_admin','=',false)->get()->sortBy(function($user) use ($questions){
+    //     return ($questions->last()->id-$user->level)*10000 + $user->submissions->count();
         
-    });
+    // });
     $last_level = $questions->last()->id;
     return view('leaderboard')->with(compact('users','last_level'));
 });

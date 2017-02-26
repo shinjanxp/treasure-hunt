@@ -9,8 +9,20 @@
 
                 <div class="panel-body">
                     You are logged in!
-                    <h2>Level: {{Auth::user()->level}}</h2>
-                    <h2>Attempts: {{Auth::user()->submissions->count()}}</h2>
+                        <h2> 
+                        @if(Auth::user()->level<=$last_level)
+                        <td>Level:{{Auth::user()->level}}</td>
+                        @else
+                        <td>Game Over</td>
+                        @endif
+                        @if(Auth::user()->is_admin())
+                        <form action="/reset" method="POST" class="pull-right">
+                            {{csrf_field()}}
+                            <button class="btn btn-primary btn-sm" type="submit">RESET LEVEL</button>
+                        </form>
+                        @endif
+                    </h2>
+                    <!--<h2>Attempts: {{Auth::user()->submissions->count()}}</h2>-->
                 </div>
             </div>
         </div>

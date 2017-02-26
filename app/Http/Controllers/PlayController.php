@@ -42,7 +42,9 @@ class PlayController extends Controller
         if($question->evaluate($submission)){
             // submission is correct
             $user->level++;
+            $user->last_level_cleared_at = \Carbon\Carbon::now();
             $user->save();
+            
             flash($question->explanation,'success')->important();
 
         }
@@ -50,5 +52,16 @@ class PlayController extends Controller
             flash('Oops! Wrong answer. Try again', 'danger');
         return redirect('/play');
         
+    }
+    public function reset(){
+        if(!\Auth::user()->is_admin())
+            abort(401,"Not authorized");
+        
+        $user=\Auth::user();
+        $user->level=1;
+        $user->last_level_cleared_at = \Carbon\Carbon::now();
+        $user->submissions()->delete();
+        $user->save();
+        return redirect('/home');
     }
 }
