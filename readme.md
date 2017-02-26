@@ -4,15 +4,25 @@ Online treasure hunt application built with Laravel
 
 # Configuration
 
-* Change application name in config/app.php. It will be reflected in all locations automatically.
-* Provide database and email credentials in .env
-* Specify the game start and end time with timezone in .env file. This is important as the /play route will be activated only between the start and end times
-* Modify database/seeds/DatabaseSeeder.php to whatever you want for the admin.
+* Change application name in .env and it will be reflected in all locations automatically.
+* Provide the following credentials in .env file:
+- APP_SECRET to be used to run migration commands using simple GET requests if shell access is unavailable.
+- APP_NAME which will change the application name globally
+- Database credentials
+- Email credentials if necessary, else it will default to php mail function
+- The MAIL_FROM_ADDRESS and MAIL_FROM_NAME which will be used when sending email
+- Game admin credentials (will be seeded during database migration only once)
+- Game start and end time with timezone in .env file. This is important as the /play route will be activated only between the start and end times
+
+
+
+## Migrating database
+
+### If shell access is available
 * Migrate the database using `php artisan migrate --seed`
 * Generate a new key using `php artisan key:generate`
-* Provide a secret passcode in APP_SECRET in .env file. This passcode can be used to run migration commands using simple GET requests if shell access is unavailable.
 
-## Migrating using GET requests
+### If no shell access is available
 There are some prebuilt routes which allow running artisan commands using GET requests. Please remember the APP_SECRET which was provided in the 
 .env file. It has to be entered at the end of all the requests to authenticate the request as being performed by the system admin.
 APP_KEY could also have been used for this purpose but since Laravel 5.4, the APP_KEY is a base64 encoded string which might include slash character.

@@ -32,7 +32,7 @@ Route::get('/artisan/migrate/seed/{key?}',  array('as' => 'refresh', function($k
     try {
       
       echo '<br>seed with app tables migrations...';
-      Artisan::call('db:seed');
+      \Artisan::call('db:seed');
       echo '<br>done with app tables migrations';
       
     } catch (Exception $e) {
@@ -48,7 +48,7 @@ Route::get('/artisan/migrate/rollback/{key?}',  array('as' => 'refresh', functio
     try {
       
       echo '<br>rollback with app tables migrations...';
-      Artisan::call('migrate:rollback');
+      \Artisan::call('migrate:rollback');
       echo '<br>done with app tables migrations';
       
     } catch (Exception $e) {
@@ -64,7 +64,7 @@ Route::get('/artisan/migrate/{key?}',  array('as' => 'migrate', function($key = 
     try {
       
       echo '<br>init with app tables migrations...';
-      Artisan::call('migrate',['--seed']);
+      \Artisan::call('migrate',['--seed']);
       echo '<br>done with app tables migrations';
       
     } catch (Exception $e) {

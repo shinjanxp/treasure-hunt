@@ -60,7 +60,8 @@ textarea, iframe{
             </div>
             
             <div class="col-md-4">
-                <h4>Solution</h4>
+                <h4>Solution <small>(lowercase alphabets only)</small></h4>
+                
                 <input type="text"  name="solution" class="form-control" value="{{ old('solution',  isset($question->solution) ? $question->solution : null) }}" required/>
             </div>
             <div class="col-md-4">
